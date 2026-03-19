@@ -1,9 +1,9 @@
-# Multi-Business Expense & Profit Analytics Dashboard
+# Multi-Business Expense & Profit Management Platform
 
-Advanced finance web app for tracking income and expenses across multiple businesses, with KPI analytics and visual reporting.
+Advanced accounting-style web app for managing multiple businesses with data entry, analytics, authentication, and monthly report exports.
 
 Resume line:
-`Built a multi-business expense and profit analytics dashboard with real-time KPI visualization, filtering, search/sort controls, and executive reporting views.`
+`Built a multi-business expense and profit management platform with editable transaction workflows, cloud-ready auth/database sync, KPI analytics, and monthly PDF/Excel report export.`
 
 ## Stack
 
@@ -11,49 +11,42 @@ Resume line:
 - Tailwind CSS v4
 - Recharts
 - Lucide Icons
+- XLSX
+- jsPDF + jspdf-autotable
+- Supabase JS (optional cloud auth/db)
+- Python openpyxl (advanced Excel workbook generator)
 
 ## Core Features
 
-- SaaS-style UI with sidebar, topbar, and responsive dashboard layout
-- Business selector (`Cafe`, `Travel`, `Textile`, `Hardware`, or all businesses)
-- Date range filters (`30d`, `90d`, `12 months`, `all time`)
-- KPI cards:
-  - Total Revenue
-  - Total Expenses
-  - Net Profit
-  - Monthly Growth %
-- Visual reports:
-  - Line chart for profit trends
-  - Pie chart for expense categories
-  - Bar chart for cross-business comparison
-- Transactions module:
-  - Search
-  - Type filter (`income` / `expense`)
-  - Sort toggle (`date` / `amount`, `asc` / `desc`)
-- Multi-page sections:
-  - Dashboard
-  - Businesses
-  - Transactions
-  - Reports
-  - Settings
-- Theme toggle (dark/light mode) with persisted preference
-- Loading skeletons for better UX
-- Advanced Excel model included at `output/spreadsheet/Expense_Profit_Tracker_Advanced.xlsx`
-  - Formula-driven KPI summary
-  - Multi-business comparison tables
-  - Native Excel charts (line, pie, bar)
+- SaaS-style layout (sidebar, topbar, KPI cards, charts)
+- Business management:
+  - Add business
+  - Edit business
+  - Delete business
+- Entry management per business:
+  - Add / edit / delete entries
+  - Types: `revenue`, `income`, `expense`, `investment`, `purchase`
+  - Purchase details: item, vendor, category, note
+- Financial KPIs:
+  - Revenue, Income, Expenses, Purchases, Investments
+  - Operating Profit, Net Cashflow, Monthly Growth
+- Analytics:
+  - Cashflow trend line chart
+  - Cost category pie chart
+  - Business comparison bar chart
+- Reports:
+  - Month + business filtered reports
+  - Export Excel and PDF
+- Auth and data modes:
+  - Local mode (default): localStorage
+  - Cloud mode (Supabase): auth + sync
+- Dark mode with persistence
 
-## Run Locally
+## Local Setup
 
 ```bash
 npm install
 npm run dev
-```
-
-## Generate the Excel Model
-
-```bash
-python3 scripts/generate_excel_tracker.py
 ```
 
 ## Quality Checks
@@ -63,11 +56,31 @@ npm run lint
 npm run build
 ```
 
-## Project Goal
+## Optional Cloud Setup (Supabase)
 
-This project is intentionally designed like a mini accounting SaaS (Zoho-style) to demonstrate:
+1. Copy `.env.example` to `.env`
+2. Fill values:
 
-- Product thinking
-- Financial analytics modeling
-- Dashboard UX skills
-- Frontend engineering execution suitable for MBA/portfolio showcase
+```bash
+VITE_SUPABASE_URL=...
+VITE_SUPABASE_ANON_KEY=...
+```
+
+3. Create required tables/policies using handbook SQL:
+- [`docs/PROJECT_HANDBOOK.md`](docs/PROJECT_HANDBOOK.md)
+
+## Advanced Excel Artifact
+
+Generate workbook:
+
+```bash
+npm run excel:generate
+```
+
+Output:
+- `output/spreadsheet/Expense_Profit_Tracker_Advanced.xlsx`
+
+## Handbook
+
+- Full implementation and setup handbook:
+  - [`docs/PROJECT_HANDBOOK.md`](docs/PROJECT_HANDBOOK.md)
