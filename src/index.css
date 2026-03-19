@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+
+:root {
+  --app-bg: #f6f8fb;
+  --panel-bg: #ffffff;
+  --panel-soft: #f3f6fb;
+  --text-primary: #121826;
+  --text-muted: #5d6679;
+  --border-color: #dbe2ec;
+  --chart-grid: #dbe2ec;
+}
+
+.dark {
+  --app-bg: #090f1f;
+  --panel-bg: #111a2d;
+  --panel-soft: #1b2840;
+  --text-primary: #eff4ff;
+  --text-muted: #98a8c7;
+  --border-color: #24324d;
+  --chart-grid: #253452;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Manrope', 'Sora', 'Segoe UI', sans-serif;
+  background: var(--app-bg);
+  color: var(--text-primary);
+}
+
+.input-select {
+  border: 1px solid var(--border-color);
+  border-radius: 0.65rem;
+  background: var(--panel-soft);
+  color: var(--text-primary);
+  height: 2.5rem;
+  padding: 0 0.75rem;
+  font-size: 0.875rem;
+  transition: border-color 0.2s ease;
+}
+
+.input-select:focus {
+  outline: none;
+  border-color: #16a34a;
+}
+
+.panel-fade {
+  animation: rise 380ms ease both;
+}
+
+.skeleton-panel {
+  border: 1px solid var(--border-color);
+  border-radius: 1rem;
+  background: linear-gradient(110deg, var(--panel-soft) 8%, var(--panel-bg) 18%, var(--panel-soft) 33%);
+  background-size: 200% 100%;
+  animation: shimmer 1.2s linear infinite;
+}
+
+@keyframes shimmer {
+  to {
+    background-position-x: -200%;
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(6px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
