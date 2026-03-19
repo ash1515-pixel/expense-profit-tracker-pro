@@ -38,12 +38,22 @@ Resume line:
   - Settings
 - Theme toggle (dark/light mode) with persisted preference
 - Loading skeletons for better UX
+- Advanced Excel model included at `output/spreadsheet/Expense_Profit_Tracker_Advanced.xlsx`
+  - Formula-driven KPI summary
+  - Multi-business comparison tables
+  - Native Excel charts (line, pie, bar)
 
 ## Run Locally
 
 ```bash
 npm install
 npm run dev
+```
+
+## Generate the Excel Model
+
+```bash
+python3 scripts/generate_excel_tracker.py
 ```
 
 ## Quality Checks

@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "excel:generate": "python3 scripts/generate_excel_tracker.py"
   },
   "dependencies": {
     "clsx": "^2.1.1",
