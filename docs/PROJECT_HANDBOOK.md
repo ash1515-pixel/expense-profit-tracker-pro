@@ -4,7 +4,7 @@
 
 **Project Name:** Expense & Profit Tracker (Advanced Excel + Web App)
 
-**Live URL:** https://expense-profit-tracker-f1v266u19-ac858247-gmailcoms-projects.vercel.app
+**Live URL:** https://expense-profit-tracker-pro.vercel.app
 
 **GitHub:** https://github.com/ash1515-pixel/expense-profit-tracker-pro
 
